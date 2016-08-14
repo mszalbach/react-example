@@ -1,2 +1,9 @@
 language: node.js
+
+install: npm install
+
 script: npm run-script build
+
+cache:
+  directories:
+    - node_modules
