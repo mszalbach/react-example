@@ -1,8 +1,8 @@
 {
-  "name": "frontend",
-  "version": "1.0.0",
-  "description": "Starter app ",
-  "main": "index.js",
+  "name": "react-example",
+  "version": "1.0-SNAPSHOT",
+  "description": "React Example",
+  "main": "App.jsx",
   "scripts": {
     "build": "webpack",
     "start": "webpack-dev-server --hot --inline "
