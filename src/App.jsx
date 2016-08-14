@@ -1,15 +1,5 @@
-var React=require("react");
-var ReactDOM=require("react-dom");
+import ReactDOM from "react-dom"
+import React from "react"
+import FilteredList from "components/filtered-list"
 
-export class App extends React.Component {
-    render() {
-        return (
-            <div>
-                <h1>Demo</h1>
-                <p>Hello</p>
-            </div>
-        );
-    }
-}
-
-ReactDOM.render(<App/>, document.getElementById('react'));
+ReactDOM.render(<FilteredList />, document.getElementById('react'));

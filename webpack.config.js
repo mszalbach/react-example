@@ -1,4 +1,5 @@
 var path = require('path');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
     entry: './src/App.jsx',
@@ -6,16 +7,23 @@ module.exports = {
     cache: true,
     debug: true,
     output: {
-        path: __dirname,
-        filename: './built/bundle.js'
+        path: "./built/",
+        filename: 'bundle.js'
     },
+
+    resolve: {
+        modulesDirectories: ['node_modules', './src'],
+        extensions: ['', '.js', '.jsx']
+    },
+
     module: {
         loaders: [
-            {
-                test: path.join(__dirname, '.'),
-                exclude: /(node_modules)/,
-                loader: 'babel-loader'
-            }
+            {test: /\.js[x]?$/, exclude: /node_modules/, loader: 'babel-loader'},
+            {test: /\.css$/, loader: ExtractTextPlugin.extract('style-loader', 'css-loader')}
         ]
-    }
+    },
+
+    plugins: [
+        new ExtractTextPlugin('bundle.css')
+    ]
 };

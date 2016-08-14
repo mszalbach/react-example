@@ -19,7 +19,10 @@
     "webpack": "^1.12.14",
     "webpack-dev-server": "^1.14.1",
     "webpack-hot-middleware": "^2.8.1",
-    "webpack-merge": "^0.8.4"
+    "webpack-merge": "^0.8.4",
+    "style-loader": "^0.12.1",
+    "css-loader": "^0.12.0",
+    "extract-text-webpack-plugin": "^0.7.0"
   },
   "dependencies": {
     "babel-preset-stage-1": "^6.5.0",
