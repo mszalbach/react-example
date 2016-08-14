@@ -14,4 +14,4 @@ After that you can use the mnpm command as wrapper to use the maven installed np
 mnpm start
 ```
 
-And you can visit the app at http://localhost:8080
+And you can visit the app at <http://localhost:8080>
