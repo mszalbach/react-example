@@ -1,4 +1,7 @@
+
 # Introduction
+[![Build Status](https://travis-ci.org/mszalbach/react-example.svg?branch=master)](https://travis-ci.org/mszalbach/react-example)
+
 Sample project to use React.js
 
 # Usage
