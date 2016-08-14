@@ -2,4 +2,4 @@ language: node.js
 jdk:
   - oraclejdk8
 install: true
-script:npm run-script build
+script: npm run-script build
