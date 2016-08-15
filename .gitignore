@@ -1,7 +1,7 @@
 .idea
 *.iml
-built
-!built/index.html
+built/*.js*
+built/*.css*
 node
 node_modules
 etc/
