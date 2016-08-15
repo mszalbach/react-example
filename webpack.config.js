@@ -1,9 +1,9 @@
 var path = require('path');
+var webpack = require('webpack');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
     entry: './src/main/js/App.jsx',
-    devtool: 'sourcemaps',
     cache: true,
     debug: true,
     output: {
@@ -24,6 +24,11 @@ module.exports = {
     },
 
     plugins: [
-        new ExtractTextPlugin('bundle.css')
+        new ExtractTextPlugin('bundle.css'),
+        new webpack.DefinePlugin({
+            'process.env': {
+                'NODE_ENV': JSON.stringify('production')
+            }
+        })
     ]
 };

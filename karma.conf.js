@@ -11,7 +11,7 @@ module.exports = function (config) {
         webpack: {},
 
         reporters: ['progress'],
-        singleRun: true,
+        singleRun: true
 
     });
 };
