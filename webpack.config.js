@@ -2,7 +2,7 @@ var path = require('path');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
-    entry: './src/App.jsx',
+    entry: './src/main/js/App.jsx',
     devtool: 'sourcemaps',
     cache: true,
     debug: true,
@@ -12,7 +12,7 @@ module.exports = {
     },
 
     resolve: {
-        modulesDirectories: ['node_modules', './src'],
+        modulesDirectories: ['node_modules', './src/main/js'],
         extensions: ['', '.js', '.jsx']
     },
 
