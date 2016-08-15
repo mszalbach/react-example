@@ -1,5 +1,7 @@
 .idea
 *.iml
 built
+!built/index.html
 node
 node_modules
+etc/
