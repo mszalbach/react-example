@@ -3,7 +3,9 @@ const webpack = require( 'webpack' );
 const ExtractTextPlugin = require( 'extract-text-webpack-plugin' );
 const HtmlWebpackPlugin = require( 'html-webpack-plugin' );
 const merge = require( 'webpack-merge' );
-const validate = require('webpack-validator');
+const validate = require( 'webpack-validator' );
+
+const parts = require( './libs/parts' );
 
 
 const PATHS = {
@@ -51,7 +53,11 @@ switch ( process.env.npm_lifecycle_event ) {
         config = merge( common, {} );
         break;
     default:
-        config = merge( common, {} );
+        config = merge(
+                common,
+                parts.devServer( {host: process.env.HOST, port: process.env.PORT} )
+        );
+
 }
 
-module.exports = validate(config);
+module.exports = validate( config );

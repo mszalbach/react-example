@@ -6,7 +6,7 @@
   "scripts": {
     "build": "webpack",
     "build-production": "webpack -p",
-    "start": "webpack-dev-server --hot --inline --content-base build/",
+    "start": "webpack-dev-server",
     "test": "karma start",
     "deploy": "gh-pages -d built"
   },
