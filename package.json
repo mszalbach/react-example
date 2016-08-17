@@ -5,10 +5,9 @@
   "main": "App.jsx",
   "scripts": {
     "build": "webpack",
-    "build-production": "webpack -p",
     "start": "webpack-dev-server --inline --hot",
     "test": "karma start",
-    "deploy": "gh-pages -d built"
+    "deploy": "gh-pages -d build"
   },
   "repository": {
     "type": "git",
