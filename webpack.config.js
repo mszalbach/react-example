@@ -1,10 +1,11 @@
 const path = require('path');
 const webpack = require('webpack');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const merge = require('webpack-merge');
 const validate = require('webpack-validator');
 const pkg = require("./package.json");
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 
 const PATHS = {
@@ -61,7 +62,8 @@ switch (process.env.npm_lifecycle_event) {
                         warnings: false
                     }
                 }),
-                new webpack.optimize.CommonsChunkPlugin("vendor", "vendor.js")
+                new webpack.optimize.CommonsChunkPlugin("vendor", "vendor.js"),
+                new CleanWebpackPlugin(PATHS.build)
             ]
 
         });
