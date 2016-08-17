@@ -1,11 +1,11 @@
-var path = require('path');
-var webpack = require('webpack');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var path = require( 'path' );
+var webpack = require( 'webpack' );
+var ExtractTextPlugin = require( 'extract-text-webpack-plugin' );
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     entry: './src/main/js/App.jsx',
-    cache: true,
-    debug: true,
+    devtool: 'source-map',
     output: {
         path: "./built/",
         filename: 'bundle.js'
@@ -19,16 +19,14 @@ module.exports = {
     module: {
         loaders: [
             {test: /\.js[x]?$/, exclude: /node_modules/, loader: 'babel-loader'},
-            {test: /\.css$/, loader: ExtractTextPlugin.extract('style-loader', 'css-loader')}
+            {test: /\.css$/, loader: ExtractTextPlugin.extract( 'style-loader', 'css-loader' )}
         ]
     },
 
     plugins: [
-        new ExtractTextPlugin('bundle.css'),
-        new webpack.DefinePlugin({
-            'process.env': {
-                'NODE_ENV': JSON.stringify('production')
-            }
+        new ExtractTextPlugin( 'bundle.css' ),
+        new HtmlWebpackPlugin({
+            template: './src/main/js/index.html'
         })
     ]
 };

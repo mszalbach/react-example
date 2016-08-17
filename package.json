@@ -29,7 +29,8 @@
     "karma-phantomjs-launcher": "~1.0.1",
     "jasmine-core": "^2.4.1",
     "phantomjs": "^2.1.7",
-    "karma-webpack": "^1.8.0"
+    "karma-webpack": "^1.8.0",
+    "html-webpack-plugin": "^2.22.0"
   },
   "dependencies": {
     "react": "^15.3.0",
