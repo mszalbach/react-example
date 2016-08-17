@@ -50,11 +50,26 @@ var config;
 // Detect how npm is run and branch based on that
 switch ( process.env.npm_lifecycle_event ) {
     case 'build':
-        config = merge( common, {} );
+        config = merge( common, {
+            devtool: 'cheap-source-map',
+            plugins: [new webpack.DefinePlugin( {
+                'process.env.NODE_ENV': JSON.stringify( 'production' )
+
+            } ),
+                      new webpack.optimize.UglifyJsPlugin( {
+                          compress: {
+                              warnings: false
+                          }
+                      } )
+            ]
+
+        } );
         break;
     default:
         config = merge(
-                common,
+                common, {
+                    devtool: 'eval-source-map'
+                },
                 parts.devServer( {host: process.env.HOST, port: process.env.PORT} )
         );
 
