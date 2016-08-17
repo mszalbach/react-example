@@ -2,7 +2,7 @@
 # Introduction
 [![Build Status](https://travis-ci.org/mszalbach/react-example.svg?branch=master)](https://travis-ci.org/mszalbach/react-example)
 
-Sample project to use [React](https://facebook.github.io/react/).
+Sample project to use [React](https://facebook.github.io/react/). A hosted version can be found at [github.io](https://mszalbach.github.io/react-example/).
 
 # Usage
 Maven is used to easily install node and npm. 
@@ -27,5 +27,6 @@ You can use the Dockerfile to build your own image and start it or simply use do
 ```bash
 docker-compose up
 ```
+
 
 

@@ -7,7 +7,8 @@
     "build": "webpack",
     "build-production": "webpack -p",
     "start": "webpack-dev-server --hot --inline --content-base built/",
-    "test": "karma start"
+    "test": "karma start",
+    "deploy": "gh-pages -d built"
   },
   "repository": {
     "type": "git",
@@ -30,7 +31,8 @@
     "jasmine-core": "^2.4.1",
     "phantomjs": "^2.1.7",
     "karma-webpack": "^1.8.0",
-    "html-webpack-plugin": "^2.22.0"
+    "html-webpack-plugin": "^2.22.0",
+    "gh-pages": "^0.11.0"
   },
   "dependencies": {
     "react": "^15.3.0",
