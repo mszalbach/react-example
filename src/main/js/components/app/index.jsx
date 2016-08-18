@@ -1,6 +1,7 @@
 import React from 'react';
 import Notes from '../notes';
 import uuid from 'uuid';
+import "./app.css";
 
 
 export default class App extends React.Component {
@@ -29,7 +30,7 @@ export default class App extends React.Component {
 
         return (
             <div>
-                <button onClick={this.addNote}>+</button>
+                <button className="add-note" onClick={this.addNote}>+</button>
                 <Notes
                     notes={notes}
                     onNoteClick={this.activateNoteEdit}
