@@ -52,6 +52,9 @@ var config;
 switch (process.env.npm_lifecycle_event) {
     case 'build':
         config = merge(common, {
+            output : {
+              filename: '[name].[chunkhash].js'
+            },
             devtool: 'cheap-source-map',
             plugins: [new webpack.DefinePlugin({
                 'process.env.NODE_ENV': JSON.stringify('production')
@@ -62,7 +65,7 @@ switch (process.env.npm_lifecycle_event) {
                         warnings: false
                     }
                 }),
-                new webpack.optimize.CommonsChunkPlugin("vendor", "vendor.js"),
+                new webpack.optimize.CommonsChunkPlugin("vendor", "[name].[chunkhash].js"),
                 new CleanWebpackPlugin(PATHS.build)
             ]
 
