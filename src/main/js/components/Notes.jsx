@@ -5,12 +5,9 @@ import Editable from './Editable';
 
 export default ({
     notes,
-    onNoteClick = () => {
-    },
-    onEdit = () => {
-    },
-    onDelete = () => {
-    }
+    onNoteClick = () => {},
+    onEdit = () => {},
+    onDelete = () => {}
 }) => (
     <ul>{notes.map(({id, editing, task}) =>
         <li key={id}>

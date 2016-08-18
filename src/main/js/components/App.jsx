@@ -20,9 +20,8 @@ export default class App extends React.Component {
             ]
         };
 
-        //Bindings needed to access state. Could be easier with autobind-decorator
+        //Bindings needed to access state when written as method. Could be easier with autobind-decorator
         this.addNote = this.addNote.bind(this);
-        this.deleteNote = this.deleteNote.bind(this);
     }
 
     render() {
@@ -41,11 +40,12 @@ export default class App extends React.Component {
         );
     }
 
+    //written as normal method so binding is needed in constructor
     addNote() {
         this.setState({notes: [...this.state.notes, {id: uuid.v4(), task: 'New task'}]});
     }
 
-    deleteNote(id, e)  {
+    deleteNote = (id, e)  => {
         e.stopPropagation();
 
         this.setState({

@@ -19,6 +19,7 @@ class Edit extends React.Component {
             autoFocus={true}
             defaultValue={value}
             onBlur={this.finishEdit}
+            //input field did not exit on enter normally so this is needed
             onKeyPress={this.checkEnter}
             {...props} />;
     }
