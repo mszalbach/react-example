@@ -1,7 +1,7 @@
 import React from 'react';
 
 export default ({editing, value, onEdit, ...props}) => {
-    if(editing) {
+    if (editing) {
         return <Edit value={value} onEdit={onEdit} {...props} />;
     }
 
@@ -12,7 +12,7 @@ export default ({editing, value, onEdit, ...props}) => {
 class Edit extends React.Component {
     render() {
         //if the onEdit is missing an javascript error is thrown because of stricter prop handling in React 15
-        const {value, onEdit,...props} = this.props;
+        const {value, onEdit, ...props} = this.props;
 
         return <input
             type="text"
@@ -22,15 +22,16 @@ class Edit extends React.Component {
             onKeyPress={this.checkEnter}
             {...props} />;
     }
+
     checkEnter = (e) => {
-        if(e.key === 'Enter') {
+        if (e.key === 'Enter') {
             this.finishEdit(e);
         }
-    }
+    };
     finishEdit = (e) => {
         const value = e.target.value;
 
-        if(this.props.onEdit) {
+        if (this.props.onEdit) {
             this.props.onEdit(value);
         }
     }
