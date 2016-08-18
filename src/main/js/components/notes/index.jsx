@@ -1,6 +1,6 @@
 import React from 'react';
-import Note from './Note';
-import Editable from './Editable';
+import Note from '../note';
+import Editable from '../editable';
 
 
 export default ({
