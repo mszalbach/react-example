@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.org/mszalbach/react-example.svg?branch=master)](https://travis-ci.org/mszalbach/react-example)
 
 Sample project to use [React](https://facebook.github.io/react/). A hosted version can be found at [github.io](https://mszalbach.github.io/react-example/).
-
+Example project is based on the book from [Survivejs](https://leanpub.com/survivejs-react).
 # Usage
 Maven is used to easily install node and npm. 
 

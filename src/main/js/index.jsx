@@ -1,5 +1,5 @@
-import ReactDOM from "react-dom"
-import React from "react"
-import FilteredList from "components/filtered-list"
+import React from "react";
+import ReactDOM from "react-dom";
+import App from './components/App';
 
-ReactDOM.render(<FilteredList />, document.getElementById('application'));
+ReactDOM.render(<App />, document.getElementById('application'));
