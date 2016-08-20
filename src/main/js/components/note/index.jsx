@@ -3,15 +3,15 @@ import Editable from '../editable';
 import "./note.css";
 
 export default ({
-    children, task, editing,
+    children, note,
     onClick = () => {},
     onEdit = () => {},
 }) => (
     <div className="note" onClick={onClick}>
         <Editable
             className="editable"
-            editing={editing}
-            value={task}
+            editing={note.editing}
+            value={note.task}
             onEdit={onEdit}/>
         {children}
     </div>
