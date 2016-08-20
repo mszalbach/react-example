@@ -1,10 +1,11 @@
 import React from 'react';
-import Notes from '../notes';
 import uuid from 'uuid';
+import Notes from '../notes';
+import connect from '../../libs/connect';
+
 import "./app.css";
 
-
-export default class App extends React.Component {
+class App extends React.Component {
     constructor(props) {
         super(props);
 
@@ -34,6 +35,7 @@ export default class App extends React.Component {
 
         return (
             <div>
+                {this.props.test}
                 <button className="add-note" onClick={this.addNote}>+</button>
                 <Notes
                     notes={notes}
@@ -50,7 +52,7 @@ export default class App extends React.Component {
         this.setState({notes: [...this.state.notes, {id: uuid.v4(), task: 'New task'}]});
     }
 
-    deleteNote = (id, e)  => {
+    deleteNote = (id, e) => {
         e.stopPropagation();
 
         this.setState({
@@ -61,7 +63,7 @@ export default class App extends React.Component {
     activateNoteEdit = (id) => {
         this.setState({
             notes: this.state.notes.map(note => {
-                if(note.id === id) {
+                if (note.id === id) {
                     note.editing = true;
                 }
 
@@ -72,7 +74,7 @@ export default class App extends React.Component {
     editNote = (id, task) => {
         this.setState({
             notes: this.state.notes.map(note => {
-                if(note.id === id) {
+                if (note.id === id) {
                     note.editing = false;
                     note.task = task;
                 }
@@ -82,3 +84,7 @@ export default class App extends React.Component {
         });
     }
 }
+
+export default connect(() => ({
+    test: 'test'
+}))(App)
